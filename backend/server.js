@@ -7,6 +7,10 @@ const PORT = 5000;
 // Middleware
 app.use(express.json());
 
+const queueRoutes = require("./routes/queueRoutes");
+
+app.use("/api/queues", queueRoutes);
+
 // Test route
 app.get("/", (req, res) => {
     res.send("Queue Management API is running");
