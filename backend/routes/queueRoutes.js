@@ -1,4 +1,5 @@
 const express = require("express");
+const supabase = require("../config/supabaseClient");
 
 const router = express.Router();
 
@@ -16,8 +17,26 @@ let queues = [
 // =====================
 // GET - Get all queues
 // =====================
-router.get("/", (req, res) => {
-    res.json(queues);
+router.get("/", async (req, res) => {
+    try {
+        const { data, error } = await supabase
+            .from("Queue")
+            .select("*");
+
+        if (error) {
+            return res.status(500).json({
+                message: "Failed to fetch queues",
+                error: error.message
+            });
+        }
+
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({
+            message: "Server error",
+            error: err.message
+        });
+    }
 });
 
 
