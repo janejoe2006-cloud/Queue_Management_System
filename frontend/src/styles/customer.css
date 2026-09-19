@@ -1,0 +1,251 @@
+/* =========================
+   QUEUE DISPLAY PAGE
+========================= */
+
+.queue-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.queue-page-heading .welcome {
+  margin-bottom: 0;
+}
+
+.active-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  border-radius: 20px;
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.active-badge span {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+
+/* Now Serving */
+
+.now-serving-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2563eb;
+  color: white;
+  padding: 28px 32px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.18);
+}
+
+.now-serving-label {
+  margin: 0 0 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.now-serving-card h2 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.serving-message {
+  margin: 7px 0 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.counter-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+.counter-info span {
+  font-size: 12px;
+}
+
+.counter-info strong {
+  margin-top: 4px;
+  font-size: 24px;
+}
+
+
+/* Card values */
+
+.purple-value {
+  color: #7c3aed !important;
+}
+
+.green-value {
+  color: #16a34a !important;
+  font-size: 22px !important;
+}
+
+
+/* Queue list header */
+
+.queue-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.queue-list-header h2 {
+  margin: 0;
+}
+
+.queue-list-header p {
+  margin: 5px 0 0;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.queue-count {
+  padding: 7px 12px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* Table heading */
+
+.queue-table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* Token */
+
+.token-number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.token-number small {
+  padding: 3px 7px;
+  background: #ede9fe;
+  border-radius: 5px;
+  color: #7c3aed;
+  font-size: 10px;
+}
+
+
+/* Status badges */
+
+.status-badge {
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-badge.completed {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.status-badge.serving {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.waiting {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.status-badge.you {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+
+/* Your token */
+
+.your-token {
+  background: #faf5ff;
+  border: 2px solid #8b5cf6;
+  border-radius: 10px;
+  padding: 15px 12px;
+  margin: 6px 0;
+}
+
+.your-token .token-number {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+
+/* Back button */
+
+.back-dashboard-button {
+  margin-top: 25px;
+  padding: 11px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back-dashboard-button:hover {
+  background: #f3f4f6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .queue-page-heading {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .now-serving-card {
+    padding: 22px;
+  }
+
+  .now-serving-card h2 {
+    font-size: 34px;
+  }
+
+  .counter-info {
+    padding: 12px 16px;
+  }
+
+  .queue-table-header {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+}
