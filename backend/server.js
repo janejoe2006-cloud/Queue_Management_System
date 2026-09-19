@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -7,6 +8,7 @@ const PORT = 5000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 const queueRoutes = require("./routes/queueRoutes");
 
