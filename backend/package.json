@@ -12,7 +12,11 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",
     "cors": "^2.8.6",
+<<<<<<< HEAD
     "dotenv": "^18.0.1",
+=======
+    "dotenv": "^18.0.0",
+>>>>>>> 7dccaea9b3f4d4b8834ae39756b0a33b52549c90
     "express": "^5.2.1",
     "ws": "^8.21.3"
   }
