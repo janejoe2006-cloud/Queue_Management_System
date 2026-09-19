@@ -1,18 +1,23 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "../styles/Customer.css";
+
 
 function QueueDisplay() {
   const navigate = useNavigate();
 
-  const queue = [
-    { token: "A-119", status: "Completed" },
-    { token: "A-120", status: "Completed" },
-    { token: "A-121", status: "Serving" },
-    { token: "A-122", status: "Waiting" },
-    { token: "A-123", status: "Waiting" },
-    { token: "A-124", status: "Waiting" },
-    { token: "A-125", status: "You" },
-  ];
+ const [queue, setQueue] = useState([]);
+
+useEffect(() => {
+  fetch("http://localhost:5000/api/queues")
+    .then((response) => response.json())
+    .then((data) => {
+      setQueue(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching queue:", error);
+    });
+}, []);
 
   return (
     <div className="customer-page">
@@ -111,13 +116,13 @@ function QueueDisplay() {
 
           {queue.map((item) => (
             <div
-              key={item.token}
+              key={item.id}
               className={`queue-item ${
                 item.status === "You" ? "your-token" : ""
               }`}
             >
               <span className="token-number">
-                {item.token}
+                {item.token_number}
 
                 {item.status === "You" && (
                   <small>Your Token</small>
